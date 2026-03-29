@@ -51,8 +51,9 @@ function exportChat() {
     alert("No hx");
     return;
   }
-  const timestamp = new Date().toISOString().slice(0,19).replace(/:/g, '-');
-  const baseName = `${timestamp}-${document.title}`;
+  const timestamp = new Date().toISOString().slice(0,19).replace(/[:\-]/g, '_');
+  const safeTitle = (document.title || "chat").replace(/[^a-zA-Z0-9]/g, '_').replace(/_+/g, '_').replace(/^_+|_+$/g, '').slice(0, 80);         
+  const baseName = `${timestamp}${safeTitle ? '_' + safeTitle : ''}`;
   const simpleLog = msgs.map(m => [m.role, m.content]);
   const exportData = {
     title: document.title || "gpt",
