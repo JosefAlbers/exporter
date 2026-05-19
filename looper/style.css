@@ -1,0 +1,39 @@
+#yt-looper-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 6px;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  transition: opacity 0.15s ease, color 0.15s ease;
+  color: #ffffff;
+  vertical-align: top;
+}
+
+#yt-looper-btn:hover {
+  opacity: 1;
+}
+
+#yt-looper-btn svg {
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+}
+
+#yt-looper-btn.active {
+  opacity: 1;
+  color: #ff4444;
+}
+
+/* Pulse animation when active */
+#yt-looper-btn.active svg {
+  animation: looper-pulse 2s ease-in-out infinite;
+}
+
+@keyframes looper-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}

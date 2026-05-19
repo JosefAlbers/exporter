@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "YT Looper",
+  "version": "1.0",
+  "description": "Loop any YouTube video with a single click",
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/watch*"],
+      "js": ["content.js"],
+      "css": ["style.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}

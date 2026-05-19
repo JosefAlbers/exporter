@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Global YouTube Speed",
+  "version": "2.0",
+  "description": "Set a global playback speed for all YouTube videos.",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
